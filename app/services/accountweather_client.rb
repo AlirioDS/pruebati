@@ -38,9 +38,9 @@ class AccountweatherClient
 
   def response(city)
     if @five_days.eql? true
-      HTTParty.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/#{city}?apikey=Qhxug0ADdxFwSdSmAdvppHev0ABfbdZd",format: :plain)
+      HTTParty.get("http://dataservice.accuweather.com/forecasts/v1/daily/5day/#{city}?apikey=v2r1BQzpMz7vsgTWEsgaoEheVKSdfw4w",format: :plain)
     else
-      HTTParty.get("http://dataservice.accuweather.com/currentconditions/v1/#{city}?apikey=Qhxug0ADdxFwSdSmAdvppHev0ABfbdZd",format: :plain)
+      HTTParty.get("http://dataservice.accuweather.com/currentconditions/v1/#{city}?apikey=v2r1BQzpMz7vsgTWEsgaoEheVKSdfw4w",format: :plain)
     end
 
   end
