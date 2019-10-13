@@ -1,0 +1,47 @@
+<div>
+  <h1>Chile Temperature: <%= @chile_temp %></h1>
+  <% count = 0 %>
+  <% @chile_prox_five_days.each do |day| %>
+  <% count += 1 %>
+  <br>
+  <h3>Dia <%= count %></h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Minimum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Maximum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <% end%>
+  <br>
+  <h3>Dia 6</h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((@chile_six_day[0].to_i - 32) * 0.5556))%> C></p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((@chile_six_day[1].to_i - 32) * 0.5556))%> C></p>
+  <br>
+
+  <h1>Temperatura en Tokio: <%= @tokio_temp %></h1>
+  <% count = 0 %>
+  <% @tokio_prox_five_days.each do |day| %>
+  <% count += 1 %>
+  <br>
+  <h3>Dia <%= count %></h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Minimum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Maximum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <% end%>
+  <br>
+  <h3>Dia 6</h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((@tokio_six_day[0].to_i - 32) * 0.5556))%> C></p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((@tokio_six_day[1].to_i - 32) * 0.5556))%> C></p>
+  <br>
+  
+  <h1>Temperatura en Paris: <%= @paris_temp %></h1>
+  <% count = 0 %>
+  <% @paris_prox_five_days.each do |day| %>
+  <% count += 1 %>
+  <br>
+  <h3>Dia <%= count %></h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Minimum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((day.dig("Temperature", "Maximum", "Value").to_i - 32) * 0.5556))%> C</p>
+  <% end%>
+  <br>
+  <h3>Dia 6</h3>
+  <p>Min Temperature: <%= "%.3g" % ("%.2f" % ((@paris_six_day[0].to_i - 32) * 0.5556))%> C></p>
+  <p>Max Temperature: <%= "%.3g" % ("%.2f" % ((@paris_six_day[1].to_i - 32) * 0.5556))%> C></p>
+  <br>
+
+</div>

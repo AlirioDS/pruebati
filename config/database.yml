@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  username: <%= Rails.application.credentials.database[:user] %>
+  password: <%= Rails.application.credentials.database[:pswd] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: <%= Rails.application.credentials.database[:development][:name] %>
+
+test:
+  <<: *default
+  database: <%= Rails.application.credentials.database[:testing][:name] %>
+
+production:
+  <<: *default
+  database: <%= Rails.application.credentials.database[:production][:name] %>
